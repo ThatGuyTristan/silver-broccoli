@@ -36,6 +36,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-var port = process.env.PORT || 5000;
-app.listen(port);
