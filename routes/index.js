@@ -1,5 +1,4 @@
 var express = require('express');
-const { response } = require('../app');
 var router = express.Router();
 
 const indexController = require('../controllers/index');
