@@ -13,13 +13,13 @@ block content
               input(type="text" name="steamid" value=steamid)
               button.btn.btn-xs.btn-outline-light(type="Submit") Find Game
         if game.name
-        .row.justify-content-center
-          div.text-light.text-center
-            h3 #{game.name}
-            img(src=`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`)
-            p
-              if game.playtime_forever < 60
-                h4 Time played: Less than one hour
-              else
-                h4 Time played: #{Math.floor(game.playtime_forever / 60) } hours
+          .row.justify-content-center
+            div.text-light.text-center
+              h3 #{game.name}
+              img(src=`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`)
+              p
+                if game.playtime_forever < 60
+                  h4 Time played: Less than one hour
+                else
+                  h4 Time played: #{Math.floor(game.playtime_forever / 60) } hours
       .col-3
