@@ -1,15 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  div
-    form(action="/retrieve" method="POST")
-      label(for="ID") Your Steam User ID
-      input(type="text" name="steamid" value=steamid)
-      button(type="Submit") Find Game
-  if game.name
-    div
-      p #{subtitle}
-      h2 #{game.name}
-      h4 Total Time Played: #{Math.floor(game.playtime_forever / 60) } hours.
-      img(src=`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`)
+  div.container-fluid
+    .row
+      .col-3
+      .col-6.border.ma-3
+        .row.justify-content-center
+          h1= title
+          div.text-light.text-center
+            form(action="/retrieve" method="POST")
+              label(for="ID") Your Steam User ID
+              input(type="text" name="steamid" value=steamid)
+              button.btn.btn-xs.btn-outline-light(type="Submit") Find Game
+        if game.name
+        .row.justify-content-center
+          div.text-light.text-center
+            h3 #{game.name}
+            img(src=`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`)
+            p
+              if game.playtime_forever < 60
+                h4 Time played: Less than one hour
+              else
+                h4 Time played: #{Math.floor(game.playtime_forever / 60) } hours
+      .col-3
