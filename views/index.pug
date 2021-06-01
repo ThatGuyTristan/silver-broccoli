@@ -21,7 +21,9 @@ block content
                 div.text-center
                   h3 #{name}
                   img(src=img_src)
-                  p #{played_time}
+              row
+                div.text-center
+                  h3 Time Played: #{played_time}
         col-3
       row
         col-3
@@ -32,9 +34,9 @@ block content
                 h6 How do I find my SteamID?
               card-text
                 p There are two ways:
-                  p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com/]
+                  p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com]
                   p The second is a little more involved.
-                    ol.text-left
+                    ol.text-center
                       li Open Steam.
                       li Navigate to your profile
                       li Select Edit Profile > and empty the Custom URL field.
