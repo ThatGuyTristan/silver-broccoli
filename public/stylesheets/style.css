@@ -1,4 +1,7 @@
 body {
+  font-family: 'Lora', sans-serif;
+  background-color: black;
+  color: white;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -7,8 +10,14 @@ a {
   color: #00B7FF;
 }
 
-.btn-xs {
-  padding: 3px;
-  font-size: 10px;
-  border-radius: 5px;
+#game-div{
+  color: white;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+#instructions {
+  background-color: black;
 }

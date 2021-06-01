@@ -1,25 +1,49 @@
 extends layout
 
 block content
-  div.container-fluid
-    .row
-      .col-3
-      .col-6.border.ma-3
-        .row.justify-content-center
-          h1= title
-          div.text-light.text-center
-            form(action="/retrieve" method="POST")
-              label(for="ID") Your Steam User ID
-              input(type="text" name="steamid" value=steamid)
-              button.btn.btn-xs.btn-outline-light(type="Submit") Find Game
-        if game.name
-          .row.justify-content-center
-            div.text-light.text-center
-              h3 #{game.name}
-              img(src=`http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`)
-              p
-                if game.playtime_forever < 60
-                  h4 Time played: Less than one hour
-                else
-                  h4 Time played: #{Math.floor(game.playtime_forever / 60) } hours
-      .col-3
+  div.text-center
+    img(src="/images/logo_large.png")
+  div.container-fluid(id="main")
+    card
+      row
+        col-3
+        col-6.rounded.ma-3.pa-3
+          row.justify-content-center.pt-2
+            div.my-5.text-center
+              form(action="/retrieve" method="POST")
+                label(for="ID") Your Steam User ID
+                div
+                  input(type="text" id="steamid" name="steamid" value=steamid)
+                  button.btn.btn-sm.btn-secondary.ml-3(type="Submit") Find Game
+          div.justify-conter-center(id="game-div")
+            if name
+              row
+                div.text-center
+                  h3 #{name}
+                  img(src=img_src)
+                  p #{played_time}
+        col-3
+      row
+        col-3
+        col-6.text-center
+          card(id="instructions" width="100%")
+            card-body
+              card-title
+                h6 How do I find my SteamID?
+              card-text
+                p There are two ways:
+                  p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com/]
+                  p The second is a little more involved.
+                    ol.text-left
+                      li Open Steam.
+                      li Navigate to your profile
+                      li Select Edit Profile > and empty the Custom URL field.
+                      li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
+
+        .col-3
+  script.
+    window.lonload = function() {
+      focusMethod = function getFocus() {
+        document.getElementById("steamid").focus();
+      }
+    }

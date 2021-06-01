@@ -12,7 +12,15 @@ exports.postRetrieveGame = (req, res, next) => {
     .then(resp => {
       let games = resp.data.response.games
       game = games[Math.floor(Math.random() * games.length)]
-      res.render('index', { game: game, subtitle: "You should play. . .", steamid: req.body.steamid});
+      console.log(game);
+      let played_time = 0;
+      let img_src = `http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_logo_url}.jpg`
+      if (game.playtime_forever < 60) {
+        played_time = "Less than one hour."
+      } else {
+        played_time = Math.floor(game.playtime_forever / 60 ) + " hours."
+      }
+      res.render('index', { name: game.name, img_src: img_src, played_time: played_time, steamid: req.body.steamid});
     })
     .catch(err => console.log(err));
 }
