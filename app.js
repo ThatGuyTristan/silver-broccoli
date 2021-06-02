@@ -18,7 +18,10 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      "img-src": ["'self'", "media.steampowered.com"]
+      defaultSrc:["'self'"],
+      scriptSrc: 'unsafe-inline',
+      fontSrc: ["'self'","fonts.gstatic.com"],
+      imgSrc: ["'self'", "media.steampowered.com"]
     },
   })
 );

@@ -1,16 +1,15 @@
 body {
-  font-family: 'Lora', sans-serif;
   background-color: black;
   color: white;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lora', sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
-#game-div{
+#game-div {
   color: white;
   height: 200px;
   margin-right: auto;
@@ -19,7 +18,9 @@ a {
 }
 
 #instructions {
-  background-color: black;
+  background-color: rgb(233, 4, 4);
+  border-radius: 5px;
+  border-color: white;
 }
 
 ol li{

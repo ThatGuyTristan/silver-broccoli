@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div.text-center(style="background-color: orange; border: 1px solid")
+  div.text-center
     img(src="/images/logo_large.png")
   div.container-fluid(id="main")
     card
@@ -22,30 +22,23 @@ block content
                   h3 #{name}
                   img(src=img_src)
               row
-                div.text-center
-                  h3 Time Played: #{played_time}
+                div.text-center.pt-3
+                  h4 Time Played: #{played_time}
         col-3
       row
         col-3
         col-6.text-center
-          card(id="instructions" width="100%")
+          card(width="100%")
             card-body
               card-title
                 h6 How do I find my SteamID?
-              card-text
+              card-text(id="instructions")
                 p There are two ways:
                   p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com]
-                  p The second is a little more involved.
+                  p Or do it manually:
                     ol.text-center
                       li Open Steam.
                       li Navigate to your profile
-                      li Select Edit Profile > and empty the Custom URL field.
+                      li Select Edit Profile and empty the Custom URL field.
                       li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
-
         .col-3
-  script.
-    window.lonload = function() {
-      focusMethod = function getFocus() {
-        document.getElementById("steamid").focus();
-      }
-    }
