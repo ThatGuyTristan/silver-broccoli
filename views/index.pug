@@ -1,44 +1,37 @@
 extends layout
 
 block content
-  div.text-center
+  div.text-center.mb-3.mt-0
     img(src="/images/logo_large.png")
-  div.container-fluid(id="main")
-    card
-      row
-        col-3
-        col-6.rounded.ma-3.pa-3
-          row.justify-content-center.pt-2
-            div.my-5.text-center
-              form(action="/retrieve" method="POST")
-                label(for="ID") Your Steam User ID
-                div
-                  input(type="text" id="steamid" name="steamid" value=steamid)
-                  button.btn.btn-sm.btn-secondary.ml-3(type="Submit") Find Game
-          div.justify-conter-center(id="game-div")
+  div.mx-auto(id="background-container")
+    div(id="sliding-background")
+  div.mx-auto(id="main")
+    div.container
+      div.row.align-items-center
+        div.col.text-left
+          h6 How do I find my Steam ID?
+          p There are two ways:
+            p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com]
+            p Or do it manually:
+              ol
+                li Open Steam.
+                li Navigate to your profile
+                li Select Edit Profile and empty the Custom URL field.
+                li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
+
+        div.col.text-center
+          div.mx-auto.my-5
+            form(action="/retrieve" method="POST")
+              label(for="ID") Your Steam User ID:
+              input(type="text" id="steamid" name="steamid" value=steamid)
+              button.btn.btn-sm.mt-2(type="Submit") Find Game
+          div.mx-auto(id="game-div")
             if name
               row
                 div.text-center
-                  h3 #{name}
                   img(src=img_src)
               row
                 div.text-center.pt-3
-                  h4 Time Played: #{played_time}
-        col-3
-      row
-        col-3
-        col-6.text-center
-          card(width="100%")
-            card-body
-              card-title
-                h6 How do I find my SteamID?
-              card-text(id="instructions")
-                p There are two ways:
-                  p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com]
-                  p Or do it manually:
-                    ol.text-center
-                      li Open Steam.
-                      li Navigate to your profile
-                      li Select Edit Profile and empty the Custom URL field.
-                      li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
-        .col-3
+                  h5 Time Played: #{played_time}
+
+

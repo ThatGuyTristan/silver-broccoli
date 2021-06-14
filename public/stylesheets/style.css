@@ -1,7 +1,7 @@
 body {
-  background-color: black;
+  background-color: #32312F;
   color: white;
-  padding: 50px;
+  padding: 25px;
   font-family: 'Lora', sans-serif;
 }
 
@@ -12,13 +12,45 @@ a {
 #game-div {
   color: white;
   height: 200px;
-  margin-right: auto;
-  margin-left: auto;
   width: 50%;
 }
 
+#background-container {
+  overflow: hidden;
+  position: absolute;
+  width: 95%;
+}
+
+#sliding-background {
+    position: relative;
+    background: url("/images/steam.png") repeat-x;
+    height: 505px;
+    width: 3072px;
+    animation: slide 60s linear infinite;
+    z-index: -10;
+}
+
+#main {
+  margin-top: 100px;
+  position: relative;
+  z-index: 10;
+  width: 66%;
+  height:100%;
+  background-color: black;
+  border-radius: 15px;
+}
+
+@keyframes slide {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-735px, 0, 0);
+  }
+}
+
 #instructions {
-  background-color: rgb(233, 4, 4);
+  background: rgb(233, 4, 4);
   border-radius: 5px;
   border-color: white;
 }
