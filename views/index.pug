@@ -1,30 +1,31 @@
 extends layout
 
 block content
-  div.text-center.mb-3.mt-0
-    img(src="/images/logo_large.png")
   div.mx-auto(id="background-container")
     div(id="sliding-background")
   div.mx-auto(id="main")
+    div.text-center.mt-0(id="title")
+      h1 What should I play on Steam
     div.container
       div.row.align-items-center
-        div.col.text-left
+        div.col.text-left.ml-4
           h6 How do I find my Steam ID?
-          p There are two ways:
-            p Use this website to do it automatically for you: #[a(href="https://www.steamidfinder.com/" target="_blank") steamidfinder.com]
-            p Or do it manually:
-              ol
-                li Open Steam.
-                li Navigate to your profile
-                li Select Edit Profile and empty the Custom URL field.
-                li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
+          p Use #[a(href="https://www.steamidfinder.com/" target="_blank") this website] to do it for you.
+          p Or do it manually:
+            ol
+              li Open Steam.
+              li Navigate to your profile
+              li Select Edit Profile and empty the Custom URL field.
+              li Once the Custom URL field is empty, grab the string of numbers following 'profiles/'
 
         div.col.text-center
           div.mx-auto.my-5
             form(action="/retrieve" method="POST")
-              label(for="ID") Your Steam User ID:
-              input(type="text" id="steamid" name="steamid" value=steamid)
-              button.btn.btn-outline-success.mt-2(type="Submit") Find Game
+              p
+                label.mr-2(for="ID") Your Steam User ID >
+                input(type="text" id="steamid" name="steamid" value=steamid)
+              p
+                button.btn.btn-sm.btn-outline-success(type="Submit") Find Game
           div.mx-auto(id="game-div")
             if name
               row
@@ -33,5 +34,3 @@ block content
               row
                 div.text-center.pt-3
                   h5 Time Played: #{played_time}
-
-

@@ -2,11 +2,10 @@ body {
   background-color: #32312F;
   color: white;
   padding: 25px;
-  font-family: 'Lora', sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: green;
 }
 
 #game-div {
@@ -26,18 +25,21 @@ a {
     background: url("/images/steam.png") repeat-x;
     height: 505px;
     width: 3072px;
-    animation: slide 60s linear infinite;
+    animation: slide 120s linear infinite;
     z-index: -10;
 }
 
 #main {
-  margin-top: 100px;
   position: relative;
-  z-index: 10;
-  width: 66%;
-  height:100%;
-  background-color: black;
-  border-radius: 15px;
+  width: 75%;
+  height:502px;
+  background-color:rgba(0, 0, 0, .9);
+  background-image: url("/images/3px-tile.png");
+  font-family: 'roboto'
+}
+
+#title{
+  font-family: 'digitalix'
 }
 
 @keyframes slide {
@@ -49,12 +51,18 @@ a {
   }
 }
 
+@font-face {
+  font-family: 'digitalix';
+  src: url("/fonts/digitalix.ttf")
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url("/fonts/Roboto-Regular.ttf")
+}
+
 #instructions {
   background: rgb(233, 4, 4);
   border-radius: 5px;
   border-color: white;
-}
-
-ol li{
-  list-style-type: none;
 }
