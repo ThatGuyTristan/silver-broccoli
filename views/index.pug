@@ -17,15 +17,18 @@ block content
                 button.btn.btn-sm.btn-outline-success.sharp(type="Submit") Query My Library
   
           div.mx-auto(id="game-div")
+            if error
+              div.text-center
+                h5.text-danger We couldn't find your account. Make sure your profile is public.
             if name
-              div.text-center 
+              div.text-center.game-info
                 h4 #{name}
               div.text-center
                   img(src=img_src)
-              div.text-center.pt-3
+              div.text-center.pt-3.game-info
                   h5 Time Played: #{played_time}
             if gamesLength > 1
-              div 
+              div.bg-secondary.mt-2.game-info
                 #{gamesLength} games in your list
               div
-                button.btn.btn-sm.btn-outline-info.mt-2(form="pageForm") Find Another      
+                button.btn.btn-sm.btn-outline-info.mt-2.sharp(form="pageForm") Find Another      
