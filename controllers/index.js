@@ -44,9 +44,8 @@ exports.postRetrieveGame = async (req, res, next) => {
 
   if(games.length === 0 || storedUsername != req.body.username) {
     storedUsername = req.body.username
-    console.log('resolving games via steam api')
     axios
-      .get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${DONT_PUSH_THIS_TO_GIT}&steamid=${steamId}&include_appinfo=true`)
+      .get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${steamId}&include_appinfo=true`)
       .then(resp => {
         games = resp.data.response.games
         game = resolveGameFromList();
