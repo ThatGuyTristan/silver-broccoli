@@ -1,28 +1,21 @@
 extends layout
 
 block content
-  div.mx-auto(id="background-container")
-    div(id="sliding-background")
   div.mx-auto(id="main")
     div.text-center.mt-0(id="title")
       h1 What should I play on Steam
     div.container
       div.row.align-items-center
-
         div.col.text-center
           div.mx-auto.my-5
-            form(action="/retrieve" method="POST")
+            form(action="/retrieve" method="POST" id="pageForm")
               p
                 label.mr-2(for="username") Enter Your Steam Username
               p
                 input(type="text" id="username" name="username" value=username)
               p
                 button.btn.btn-sm.btn-outline-success.sharp(type="Submit") Query My Library
-                if gamesLength > 1
-                  div 
-                    #{gamesLength} games in your list
-                  div
-                    button.btn.btn-sm.btn-outline-info.mt-2 Find Another
+  
           div.mx-auto(id="game-div")
             if name
               div.text-center 
@@ -31,3 +24,8 @@ block content
                   img(src=img_src)
               div.text-center.pt-3
                   h5 Time Played: #{played_time}
+            if gamesLength > 1
+              div 
+                #{gamesLength} games in your list
+              div
+                button.btn.btn-sm.btn-outline-info.mt-2(form="pageForm") Find Another      
