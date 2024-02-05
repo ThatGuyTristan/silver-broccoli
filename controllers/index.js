@@ -1,7 +1,6 @@
 const axios = require("axios");
 require('dotenv').config()
 
-const DONT_PUSH_THIS_TO_GIT = 'F3EDB222C9455394555706722F3FE1BF'
 let games = [];
 let storedUsername;
 
@@ -10,7 +9,7 @@ const resolveVanityUrl = async (username) => {
     resolve(
       axios
         .get(
-          `http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${DONT_PUSH_THIS_TO_GIT}&vanityurl=${username}`
+          `http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${process.env.STEAM_API_KEY}&vanityurl=${username}`
         )
       ) 
     }
