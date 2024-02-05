@@ -1,68 +1,68 @@
-body {
-  background-color: #32312F;
-  color: white;
-  padding: 25px;
-}
+  body {
+    background-color: #32312F;
+    color: white;
+    padding: 10px;
+    font-family: 'digitalix'
+  }
 
-a {
-  color: green;
-}
+  a {
+    color: green;
+  }
 
-#game-div {
-  color: white;
-  height: 200px;
-  width: 50%;
-}
+  #game-div {
+    color: white;
+    height: 200px;
+    width: 50%;
+  }
 
-#background-container {
-  overflow: hidden;
-  position: absolute;
-  width: 95%;
-}
+  #background-container {
+    overflow: hidden;
+    position: absolute;
+    width: 95%;
+  }
 
-#sliding-background {
+  #main {
     position: relative;
-    background: url("/images/steam.png") repeat-x;
-    height: 505px;
-    width: 3072px;
-    animation: slide 120s linear infinite;
-    z-index: -10;
-}
-
-#main {
-  position: relative;
-  width: 75%;
-  height:502px;
-  background-color:rgba(0, 0, 0, .9);
-  background-image: url("/images/3px-tile.png");
-  font-family: 'roboto'
-}
-
-#title{
-  font-family: 'digitalix'
-}
-
-@keyframes slide {
-  0%{
-    transform: translate3d(0, 0, 0);
+    width: 75%;
+    height:100%;
+    background-color:rgba(0, 0, 0, .9);
+    background-image: url("/images/3px-tile.png");
   }
-  100%{
-    transform: translate3d(-735px, 0, 0);
+
+  #title{
+    font-family: 'digitalix'
   }
-}
 
-@font-face {
-  font-family: 'digitalix';
-  src: url("/fonts/digitalix.ttf")
-}
+  @keyframes slide {
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-735px, 0, 0);
+    }
+  }
 
-@font-face {
-  font-family: 'roboto';
-  src: url("/fonts/Roboto-Regular.ttf")
-}
+  @font-face {
+    font-family: 'digitalix';
+    src: url("/fonts/digitalix.ttf")
+  }
 
-#instructions {
-  background: rgb(233, 4, 4);
-  border-radius: 5px;
-  border-color: white;
+  @font-face {
+    font-family: 'roboto';
+    src: url("/fonts/Roboto-Regular.ttf")
+  }
+
+  .sharp { 
+    border-radius: 0px;
+  }
+
+  input {
+    background-color: black;
+    color: green;
+  }
+
+@media screen and (max-width: 768px) {
+  #main {
+    width: 100%;
+  }
 }

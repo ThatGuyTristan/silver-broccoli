@@ -15,7 +15,7 @@
     "helmet": "^4.6.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.22",
     "pug": "^3.0.2",
     "serve-favicon": "^2.5.0"
   },
@@ -24,7 +24,6 @@
   },
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bradleyaellis/silver-broccoli.git"
